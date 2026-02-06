@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image to Word - Sarvam AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Image to Word Converter</h1>
+    <p>Upload a PNG or JPEG image to convert it to a Word document using Sarvam AI Document Intelligence.</p>
+
+    <form id="upload-form">
+      <label class="file-label">
+        <span>Select image (PNG or JPEG)</span>
+        <input type="file" id="file-input" accept="image/png,image/jpeg" required />
+      </label>
+
+      <button type="submit" id="convert-btn">Convert to Word</button>
+    </form>
+
+    <div class="preview">
+      <img id="preview-img" alt="Preview" />
+    </div>
+
+    <div class="progress-wrapper" id="progress-wrapper" hidden>
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <p id="status-text"></p>
+
+    <a id="download-link" href="#" download="output.docx" hidden>Download Word file</a>
+  </div>
+
+  <!-- MD to DOCX library -->
+  <script src="https://cdn.jsdelivr.net/npm/pizzip@3.1.4/dist/pizzip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docxtemplater@3.42.0/build/docxtemplater.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
