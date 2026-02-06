@@ -9,8 +9,8 @@ const convertBtn = document.getElementById("convert-btn");
 const downloadLink = document.getElementById("download-link");
 const apiKeyInput = document.getElementById("api-key-input");
 
-// Sarvam AI API configurationconst SARVAM_API_ENDPOINT = "https://api.sarvam.ai/document-intelligence";
-
+// Sarvam AI API configuration
+const SARVAM_API_ENDPOINT = "https://api.sarvam.ai/document-intelligence";
 // Preview image on file selection
 fileInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
