@@ -56,6 +56,45 @@ The site is already configured for GitHub Pages and will be automatically deploy
 
 ### 4. Local Development
 
+### Using the Backend Proxy (Recommended)
+
+To avoid CORS issues and keep your API key secure, use the included Node.js proxy server:
+
+1. Make sure you have [Node.js](https://nodejs.org/) installed
+
+2. Copy the `.env.example` file to `.env`:
+```bash
+cp .env.example .env
+```
+
+3. Edit the `.env` file and add your Sarvam API key:
+```
+SARVAM_API_KEY=your_actual_sarvam_api_key_here
+PORT=3000
+```
+
+4. Install dependencies:
+```bash
+npm install
+```
+
+5. Start the proxy server:
+```bash
+npm start
+```
+
+6. The proxy server will run on `http://localhost:3000`
+
+7. Update `app.js` to use the local proxy:
+```javascript
+// Change this line in app.js
+const API_URL = 'http://localhost:3000/api/document-intelligence';
+```
+
+8. Open `index.html` in your browser or use a local server
+
+**Note:** The proxy server will handle CORS and keep your API key secure on the server side.
+
 For local testing, simply open `index.html` in a modern web browser. However, due to CORS restrictions, you may need to:
 
 1. Use a local server:
