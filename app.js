@@ -10,8 +10,7 @@ const downloadLink = document.getElementById("download-link");
 const apiKeyInput = document.getElementById("api-key-input");
 
 // Sarvam AI API configuration
-const SARVAM_API_ENDPOINT = "https://api.sarvam.ai/document-intelligence";
-// Preview image on file selection
+const SARVAM_API_BASE = "https://api.sarvam.ai";// Preview image on file selection
 fileInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
   if (!file) return;
