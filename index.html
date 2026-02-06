@@ -12,6 +12,11 @@
     <p>Upload a PNG or JPEG image to convert it to a Word document using Sarvam AI Document Intelligence.</p>
 
     <form id="upload-form">
+            <label class="api-key-label">
+        <span>Sarvam API Key</span>
+        <input type="password" id="api-key-input" placeholder="Enter your Sarvam AI API key" required />
+      </label>
+
       <label class="file-label">
         <span>Select image (PNG or JPEG)</span>
         <input type="file" id="file-input" accept="image/png,image/jpeg" required />
