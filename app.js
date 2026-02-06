@@ -7,10 +7,9 @@ const progressBar = document.getElementById("progress-bar");
 const statusText = document.getElementById("status-text");
 const convertBtn = document.getElementById("convert-btn");
 const downloadLink = document.getElementById("download-link");
+const apiKeyInput = document.getElementById("api-key-input");
 
-// Sarvam AI API configuration
-const SARVAM_API_KEY = "YOUR_SARVAM_API_KEY_HERE";
-const SARVAM_API_ENDPOINT = "https://api.sarvam.ai/document-intelligence";
+// Sarvam AI API configurationconst SARVAM_API_ENDPOINT = "https://api.sarvam.ai/document-intelligence";
 
 // Preview image on file selection
 fileInput.addEventListener("change", (e) => {
@@ -102,6 +101,13 @@ form.addEventListener("submit", async (e) => {
   convertBtn.disabled = true;
 
   try {
+
+        // Get API key from input field
+    const apiKey = apiKeyInput.value.trim();
+    if (!apiKey) {
+      alert("Please enter your Sarvam API key.");
+      return;
+    }
     // Prepare form data for Sarvam API
     const formData = new FormData();
     formData.append("file", file);
@@ -112,8 +118,7 @@ form.addEventListener("submit", async (e) => {
     const response = await fetch(SARVAM_API_ENDPOINT, {
       method: "POST",
       headers: {
-        "api-subscription-key": SARVAM_API_KEY
-      },
+        "api-subscription-key": apiKey      },
       body: formData
     });
 
